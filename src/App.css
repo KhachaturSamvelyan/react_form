@@ -1,38 +1,271 @@
-.App {
-  text-align: center;
+*{
+	box-sizing: border-box;
+	outline: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+	overflow-x: hidden;
+	margin: 0;
+	font-size: 16px;
+	position: relative;
+  background:  #E5E5E5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6, p{
+	padding: 0;
+	margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+}
+
+li{
+  list-style: none;
+}
+
+button, input{
+	-webkit-appearance: none
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+
+.container{
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+form{
+  padding: 40px 30px;
+  background: #FFFFFF;
+  box-shadow: 0px 12px 24px rgba(44, 39, 56, 0.02), 0px 32px 64px rgba(44, 39, 56, 0.04);
+  border-radius: 24px;
+  width: 460px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+h1{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 34px;
+  line-height: 44px;
+  color: #2C2738;
+  margin-bottom: 8px;
+}
+
+.sign{
+  display: flex;
+  align-items: center;
+  margin-bottom: 52px;
+}
+
+.sign p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #2C2738;
+  margin-right: 6px;
+}
+
+.sign a {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: rgba(8, 128, 174, 1);
+}
+.label-inp{
+  margin-bottom: 15px;
+  display: block;
+}
+.label-inp p{
+  margin-bottom: 6px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #756F86;
+}
+
+.error{
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FF7171!important;
+  margin-top: 8px;
+  min-height: 18px;
+}
+
+.label-inp input{
+  padding: 14.5px 16px;
+  background: #FFFFFF;
+  border: 1px solid #DBE2EA;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+  border-radius: 6px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: rgba(44, 39, 56, 1);
+  width: 100%;
+
+}
+
+.label-inp input::placeholder{
+  color: #7C9CBF;
+}
+
+.label-content p a {
+  color: #0880AE
+}
+.label-content{
+  margin-bottom: 30px;
+}
+
+.label-content p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #756F86;
+  margin-left: 8px;
+  
+}
+
+
+
+.btn{
+  width: 100%;
+  padding: 16px 0;
+  background: #0880AE;
+  box-shadow: 0px 2px 4px rgba(44, 39, 56, 0.08), 0px 4px 8px rgba(44, 39, 56, 0.08);
+  border-radius: 6px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #EBF4F8;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover{
+  opacity: 0.9;
+}
+
+
+input[type="submit"]:disabled{
+  background: #DBE2EA;
+  color: rgba(177, 181, 191, 1);
+}
+
+
+input:focus{
+  border: 1px solid #0880AE;
+}
+
+.checkbox-container{
+  margin-bottom: 30px;
+}
+
+
+
+.container-label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.container-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 28px;
+  width: 28px;
+  transform: translateY(-50%);
+  background: #FFFFFF;
+  border: 1px solid #DBE2EA;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+  border-radius: 4px;
+}
+
+.check-mark-error{
+  border: 2px solid #FF7171
+}
+
+
+
+.container-label input:checked ~ .checkmark {
+  background: #FFFFFF;
+  border: 2px solid #0880AE;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 8px rgba(44, 39, 56, 0.04);
+  border-radius: 4px;
+}
+
+.checkmark:after {
+  content: unset;
+  position: absolute;
+  display: none;
+  
+}
+
+.container-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-label .checkmark:after {
+
+ content: url("mask.svg");
+ position: absolute;
+ top: 41%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+}
+
+@media(max-width: 485px){
+  .container{
+    max-width: 95%;
+    margin: 0 auto;
+    height: 100%;
   }
 }
